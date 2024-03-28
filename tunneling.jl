@@ -39,8 +39,6 @@ function wkbt(u::Vector{Float64},tp1,tp2,LL,NN,Ener)
         return T
 	end
 
-#a=turnningpoints(list,10,1000,-0.8)
-#println("resultado:",a)
 
 end
 

@@ -5,16 +5,7 @@ import body
 import norm
 
 
-#L=20
-#k=2
-#N=400
-#beta=0.0
-#ep1=0.0000001
-#ep2=0.001
-#mi=100
 
-#r=body.selfconsistent(L,N,beta,k,ep1,ep2,mi)
-#wf=norm.normalizing(r[3],2L/N)
 
 
 
@@ -60,6 +51,6 @@ function wignerf(psi,L,N)
          return "Done"
 	 end
 
-#wig=wignerf(wf,L,N)
+
 
 end
