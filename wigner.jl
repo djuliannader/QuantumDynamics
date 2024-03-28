@@ -33,7 +33,7 @@ function wignerf(psi,L,N)
 	     ie=1
 	     for k in imin:imax
 	        y=x[k]
-	        sum=sum+(exp(2*im*pinst*y))*psi[i-iint+ie]*psi[i+iint-ie+1]*d
+	        sum=sum+(exp(2*im*pinst*y))*conj.(psi[i-iint+ie])*psi[i+iint-ie+1]*d
 		ie=ie+1
 	     end
 	     w=sum/(pi)

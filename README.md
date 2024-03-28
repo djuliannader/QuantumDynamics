@@ -13,4 +13,4 @@ Cite as:
 
 
 
-For change the potential go to file initialpotential.jl
+For change the potential go to file potential.jl

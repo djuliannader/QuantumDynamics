@@ -32,3 +32,4 @@ Manifest.toml
 .#main.jl
 #README.md#
 #README.md
+dynamics.jl
