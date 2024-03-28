@@ -1,0 +1,12 @@
+L For defining space [-L,L] (Float)
+20
+Number N of intervals (Int)
+200
+k-state for wave function (int)
+1
+Printing wavefunction (True/False)
+False
+WKB coefficient of transmission (True/False)
+False
+Turning points involved in the tunneling from left to right (List[Int])
+[2,3]
