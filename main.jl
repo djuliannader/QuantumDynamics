@@ -7,8 +7,8 @@ import tunneling
 using Plots
 
 
-println("\r Gross-Pitaeskii 1D ")
-println("\r Selfconsistent method")
+println("\r Quantum-Dynamics 1D ")
+println("\r Finite Difference Method")
 
 
 # Reading data from input file

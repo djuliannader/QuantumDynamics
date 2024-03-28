@@ -18,7 +18,7 @@ import norm
 
 
 
-function wignerf(psi::Vector{Float64},L,N)
+function wignerf(psi,L,N)
 	 pi=acos(-1)
          imin=trunc(Int64,N/4)
 	 iint=imin

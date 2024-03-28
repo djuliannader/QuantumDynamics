@@ -1,7 +1,7 @@
 L For defining space [-L,L] (Float)
 20
 Number N of intervals (Int)
-200
+500
 k-state for wave function (int)
 1
 Printing wavefunction (True/False)
