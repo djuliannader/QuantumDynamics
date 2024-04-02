@@ -8,9 +8,9 @@ WKB coefficient of transmission (True/False)
 False
 Turning points involved in the tunneling from left to right (List[Int])
 [2,3]
-Parameters of the initial coherent state alpha=[x,p]  (List[Int])
+Parameters of the initial coherent state alpha=[x,p] (List[Int])
 [0,0]
-Time for screen shot of the wigner funtcion (Float)
+Time for screen shoot of the wigner funtcion (Float)
 5.0
-Time for the survival probability (Float)
+Maximum time for the survival probability (Float)
 5.0

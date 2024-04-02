@@ -39,8 +39,14 @@ println("------------------------------------------------")
 println("Space from -L to L with L=",L)
 println("Partitioning the space in N=",N, " subintervals")
 
-# calling function which performs selfconsistent method
 @time begin
+
+#------------------------------------------------------------------------------------
+#------ Calculations of the stationary state starts ---------------------------------
+#------------------------------------------------------------------------------------
+
+
+# calling function which performs the diagonalizacion
 r=body.diagonalization(L,N,k)
 
 
@@ -75,6 +81,16 @@ r=body.diagonalization(L,N,k)
  end
 
 println("----------------------------------------------------------------")
+
+
+#------------------------------------------------------------------------------------
+#------ Calculations of the stationary state ends   ---------------------------------
+#------------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------------
+#------ Calculations of the dynamics of coherent state starts -----------------------
+#------------------------------------------------------------------------------------
+
 
 end
 
