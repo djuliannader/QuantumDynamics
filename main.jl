@@ -51,16 +51,20 @@ r=body.diagonalization(L,N,k)
 
 
 # printing results
-# calling function which normalize the wave function and priting results
+# calling function which normalize the wave function and printing results
  println("-------------    results of the stationary (k=",k,") state     ---------------")
  wf=norm.normalizing(r[2],2L/N)
  x=[-L+(2L/N)*i for  i in 1:(N-1)]
  open("wavefunction_stationary.dat","w") do io
+ open("energylevels.dat","w") do io2
      for i in 1:length(x)
        println(io,x[i]," ",round(real(wf[i]),digits=16))
+       println(io2,round(real(r[1][i]),digits=16))
      end
  end
+ end
  println("See file wavefunction_stationary.dat for the wave function ")
+ println("See file energylevels.dat for energy levels")
  # calling routine to calculate wigner function
   wig=wigner.wignerf(wf,L,N,"wigner_stationary.dat")
  println("Ground state energy = ",r[1][1])

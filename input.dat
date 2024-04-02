@@ -1,8 +1,8 @@
-L For defining space [-L,L] (Float)
+L for defining the space [-L,L] (Float)
 20
-Number N of intervals (Int)
+N number of intervals (Int)
 500
-k stationary state for wave function and energy (Int)
+k-stationary state (Int)
 2
 WKB coefficient of transmission (True/False)
 False
