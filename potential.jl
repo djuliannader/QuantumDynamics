@@ -2,7 +2,7 @@ module potential
 export V
 
 function V(x)
-    x1 = -10*x^2+x^4
+    x1 = x^2
     return x1
     end
 

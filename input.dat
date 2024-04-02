@@ -3,9 +3,7 @@ L For defining space [-L,L] (Float)
 Number N of intervals (Int)
 500
 k-state for wave function (int)
-1
-Printing wavefunction (True/False)
-False
+2
 WKB coefficient of transmission (True/False)
 False
 Turning points involved in the tunneling from left to right (List[Int])

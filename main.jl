@@ -27,12 +27,10 @@ open("input.dat") do f
  K8=readline(f)
  K9=readline(f)
  K10=readline(f)
- K11=readline(f)
- K12=readline(f)
 
 
  tt=r"([0-9])" 
- tpl = [parse(Int64,t.match) for t in eachmatch(tt, K12)]
+ tpl = [parse(Int64,t.match) for t in eachmatch(tt, K10)]
  
 #------------------------------------
 
@@ -48,9 +46,19 @@ r=body.diagonalization(L,N,k)
 end
 
 # printing results
-# calling function which normalize the wave function
+# calling function which normalize the wave function and priting results
  wf=norm.normalizing(r[2],2L/N)
- println("-----------------------------------------------")
+ x=[-L+(2L/N)*i for  i in 1:(N-1)]
+ open("wavefunction.dat","w") do io
+     for i in 1:length(x)
+       println(io,x[i]," ",round(real(wf[i]),digits=16))
+     end
+ end
+ println("------------  printing data -------------------")
+ println("See file wavefunction.dat for wave function")
+ # calling routine to calculate wigner function
+  wig=wigner.wignerf(wf,L,N)
+println("--------------    results     ------------------")
  println("Ground state energy = ",r[1][1])
  # calling function which calculate the derivative of the wave function at the center of coordinates
  der=norm.derivative2(wf,2L/N)
@@ -67,24 +75,11 @@ end
    println("WKB transmission coeficient: ",tcoef)
  end
 
-# calling routine to calculate wigner function
-  wig=wigner.wignerf(wf,L,N)
 
 
-# printing the wave function
-if K12=="True"
-   println("-------------")
-   println("u:",wf)
-   println("-------------")
- end
-
-
-
-x=[-L+(2L/N)*i for  i in 1:(N-1)]
-plot(x,wf,title="wave function")
- xlabel!("x")
- ylabel!("y(x)")
 end
+
+
 
 
 
