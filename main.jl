@@ -38,43 +38,45 @@ open("input.dat") do f
 println("------------------------------------------------")
 println("Space from -L to L with L=",L)
 println("Partitioning the space in N=",N, " subintervals")
-println("------------------------------------------------")
 
 # calling function which performs selfconsistent method
 @time begin
 r=body.diagonalization(L,N,k)
-end
+
 
 # printing results
 # calling function which normalize the wave function and priting results
+ println("-------------    results of the stationary (k=",k,") state     ---------------")
  wf=norm.normalizing(r[2],2L/N)
  x=[-L+(2L/N)*i for  i in 1:(N-1)]
- open("wavefunction.dat","w") do io
+ open("wavefunction_stationary.dat","w") do io
      for i in 1:length(x)
        println(io,x[i]," ",round(real(wf[i]),digits=16))
      end
  end
- println("------------  printing data -------------------")
- println("See file wavefunction.dat for wave function")
+ println("See file wavefunction_stationary.dat for the wave function ")
  # calling routine to calculate wigner function
-  wig=wigner.wignerf(wf,L,N)
-println("--------------    results     ------------------")
+  wig=wigner.wignerf(wf,L,N,"wigner_stationary.dat")
  println("Ground state energy = ",r[1][1])
+ println("Energy of the ",k," state = ",r[1][k])
  # calling function which calculate the derivative of the wave function at the center of coordinates
  der=norm.derivative2(wf,2L/N)
  println("Second derivative at the center of coordinates: ",der)
 
 
 # calling function which calculate the classical turning points
- tpoints=tunneling.turnningpoints(wf,L,N,r[1][1])
+ tpoints=tunneling.turnningpoints(wf,L,N,r[1][k])
  println("Classical turning points: ",tpoints)
 
 # calling function which transmision coefficient
  if K10=="True"
-   tcoef=tunneling.wkbt(wf,tpoints[tpl[1]],tpoints[tpl[2]],L,N,r[1][1])
+   tcoef=tunneling.wkbt(wf,tpoints[tpl[1]],tpoints[tpl[2]],L,N,r[1][k])
    println("WKB transmission coeficient: ",tcoef)
  end
 
+println("----------------------------------------------------------------")
+
+end
 
 
 end

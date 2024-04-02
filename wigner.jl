@@ -5,11 +5,7 @@ import body
 import norm
 
 
-
-
-
-
-function wignerf(psi,L,N)
+function wignerf(psi,L,N,name::String)
 	 pi=acos(-1)
          imin=trunc(Int64,N/4)
 	 iint=imin
@@ -21,7 +17,7 @@ function wignerf(psi,L,N)
 	   println("*Please, consider a larger domain to see the Wigner function*")
 	   return "Done"
          end
-	 open("wignerfunction.dat","w") do io
+	 open(name,"w") do io
 	 sumw=0.0
 	 sumnw=0.0
 	 sumnx=0.0
@@ -43,7 +39,7 @@ function wignerf(psi,L,N)
 	     sumnx=sumnx+d*d*w*(xinst*xinst)
            end
 	 end
-	 println("Go to file wignerfunction.dat to see data for wigner function")
+	 println("Go to file ",name," to see the wigner function")
 	 println("Volume of the wigner function: ",real(sumw))
 	 println("Volume of the negative region: ",real(sumnw)-1)
 	 println("Expectation value <x^2> : ",real(sumnx))

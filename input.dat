@@ -2,9 +2,15 @@ L For defining space [-L,L] (Float)
 20
 Number N of intervals (Int)
 500
-k-state for wave function (int)
+k stationary state for wave function and energy (Int)
 2
 WKB coefficient of transmission (True/False)
 False
 Turning points involved in the tunneling from left to right (List[Int])
 [2,3]
+Parameters of the initial coherent state alpha=[x,p]  (List[Int])
+[0,0]
+Time for screen shot of the wigner funtcion (Float)
+5.0
+Time for the survival probability (Float)
+5.0
